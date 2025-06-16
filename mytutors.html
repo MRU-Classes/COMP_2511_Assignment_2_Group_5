@@ -1,0 +1,76 @@
+<!-- File: myTutors.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your selected tutors at Tutor Doc">
+  <title>My Tutors - Tutor Doc</title>
+  <link rel="stylesheet" href="style/general.css">
+  <link rel="stylesheet" href="style/mytutors.css">
+</head>
+
+<body>
+
+  <a id="top"></a>
+  <header>
+    <img src="images/logo.png" alt="Tutor Doc Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="searchtutors.html">Search Tutors</a></li>
+        <li><a href="mytutors.html" class="active">My Tutors</a></li>
+        <li><a href="tutorprofile.html">Tutor Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <h1>My Tutors</h1>
+    <p>Currently Registered Tutors:</p>
+    
+    <form action="mytutors.html" method="get" id="search-form">
+      <label for="search-query">Search:</label>
+      <input type="search"
+            id="search-query"
+            name="search-query"
+            placeholder="Search tutors…">
+      <button type="submit">Search</button>
+    </form>
+    
+    <ul class="tutor-list">
+      <li class="tutor-card">
+        <img src="images/smiling-girl.png" alt="Michelle Hendley">
+        <h2>Michelle Hendley</h2>
+        <p>Calgary, AB</p>
+        <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      </li>
+      <li class="tutor-card">
+        <img src="images/smiling-girl.png" alt="Kimberly White">
+        <h2>Kimberly White</h2>
+        <p>Edmonton, AB</p>
+        <p>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+      </li>
+      <li class="tutor-card">
+        <img src="images/smiling-boy.png" alt="Steve Rogers">
+        <h2><a href="tutorprofile.html" class="tutor-name">Steve Rogers</a></h2>
+        <p>Edmonton, AB</p>
+        <p>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+      </li>
+    </ul>
+
+      <p>Visit the MyMRU website for your student profile: 
+        <a href="https://www.mymru.ca" target="_blank" rel="noopener">mymru.ca</a>
+      </p>
+
+      <a href="#top">Back to top</a>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Tutor Doc
+  </footer>
+
+</body>
+</html>

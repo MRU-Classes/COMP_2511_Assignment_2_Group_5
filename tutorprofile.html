@@ -1,0 +1,123 @@
+<!-- File: tutorProfile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tutor profile details at Tutor Doc">
+  <title>Tutor Profile - Tutor Doc</title>
+  <link rel="stylesheet" href="style/general.css">
+  <link rel="stylesheet" href="style/tutorprofile.css">
+</head>
+<body>
+  <a id="top"></a>
+  <header>
+    <img src="images/logo.png" alt="Tutor Discover Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="searchtutors.html">Search Tutors</a></li>
+        <li><a href="mytutors.html">My Tutors</a></li>
+        <li><a href="tutorprofile.html" class="active">Tutor Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1>
+        Steve Rogers <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+      </h1>
+      <p class="reviews">(4.3) 53 Reviews</p>
+      
+    <figure>
+      <img 
+        src="images/smiling-boy.png" 
+        alt="Steve Rogers profile picture" 
+        class="profile-pic"
+      >
+      <figcaption>
+        Professional tutor in MATH 2234: Concepts of Mathematical Statistics
+      </figcaption>
+    </figure>
+
+      
+      <p class="education"><strong>Education:</strong> Master's Degree in Data Analytics</p>
+      <p class="bio">I am a graduate student currently getting my Master's degree in Data Analytics while working as a tutor to support myself. I have a strong background in math and business-related subjects like finance and statistics, and I enjoy helping students who struggle with numbers. I want to work with students who are willing to learn and improve and put the time in.</p>
+
+      <h2 id="availability">Availability</h2>
+      <table class="availability-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>5:00pm - 8:00pm</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>5:00pm - 8:00pm</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        
+        <form>
+          <div class="form-row">
+            <label for="subject">Subject (required):</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+        
+          <div class="form-row">
+            <label for="email">Email (required):</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        
+          <div class="form-row">
+            <label for="phone">Phone (optional):</label>
+            <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+          </div>
+        
+          <div class="form-row">
+            <label>Preferred Contact Method:</label>
+            <label><input type="radio" name="contact-method" value="email" checked> Email</label>
+            <label><input type="radio" name="contact-method" value="phone"> Phone</label>
+          </div>
+        
+          <div class="form-row">
+            <label>Services Interested In:</label>
+            <label><input type="checkbox" name="service" value="in-person"> In-person</label>
+            <label><input type="checkbox" name="service" value="online"> Online</label>
+          </div>
+        
+          <div class="form-row">
+            <label for="message">Message (required):</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+        
+          <div class="form-row">
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date">
+          </div>
+        
+          <div class="form-row buttons">
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>        
+        
+      </section>
+
+      <a href="#top">Back to top</a>
+    </article>
+  </main>
+  <footer>
+    &copy; 2025 Tutor Doc
+  </footer>
+</body>
+</html>
