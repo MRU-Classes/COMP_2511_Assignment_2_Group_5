@@ -18,7 +18,7 @@ main article h1 {
 
 .rating {
   font-size: 1.1rem;
-  color: #f5c518;
+  color: #000000;
   margin-left: 6px;
   vertical-align: middle;
 }
@@ -33,7 +33,6 @@ main article h1 {
 
 .bio {
   margin: 15px 0;
-  text-align: justify;
 }
 
 /* style the very first letter of the intro paragraph */
@@ -72,6 +71,20 @@ form {
 .form-row {
   display: flex;
   flex-direction: column;
+  gap: 4px;
+}
+
+.form-row.radio-group,
+.form-row.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;              
+}
+
+.form-row.radio-group > label:first-child,
+.form-row.checkbox-group > label:first-child {
+  font-weight: bold;
+  margin-right: 1rem;
 }
 
 .form-row label {
@@ -113,7 +126,7 @@ form textarea {
   border: none;
   border-radius: 4px;
   background-color: #4c9e91;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   width: fit-content;
   flex: 0 0 auto;
@@ -122,6 +135,21 @@ form textarea {
 
 .form-row.buttons button:hover {
   background-color: #3b857a;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+button[type="submit"],
+button[type="reset"] {
+  vertical-align: middle;
+  margin: 0;               
+  padding: 0;               
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 input[type="date"] {
