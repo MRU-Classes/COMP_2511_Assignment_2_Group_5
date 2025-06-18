@@ -1,8 +1,83 @@
+
+/* Unique styling for My Tutors page */
+
+/* Layout adjustments */
 main > p {
   margin-bottom: 0.5rem;
 }
 
-  /* Grid layout for tutor list */
+.container {
+  max-width: 790px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a8d5ba;
+  padding: 10px 16px;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+/* Hamburger Menu */
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+  padding: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.nav-links a.active {
+  background-color: #4e9a8a;
+  color: white;
+}
+
+.nav-links a:hover {
+  background-color: #4e9a8a;
+  color: white;
+}
+
+/* Tutor Cards */
 .tutor-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -12,67 +87,141 @@ main > p {
   margin: 20px 0;
 }
 
-/* Tutor image */
-.tutor-list li img {
+.tutor-card {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+}
+
+.tutor-card img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-input[type="search"] {
-
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-
-  height: 42px;
-  box-sizing: border-box;
-
-  border: 1px solid #ccc;
-  border-radius: 4px;
-
-  background-color: #fff;
-  color: #333;
-
-  vertical-align: middle;
+.tutor-card h2 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #1a237e;
 }
 
-#search-form input[type="search"]:hover {
-  background-color: #f9f9f9;   /* light gray tint */
-  border-color:   #999;        /* slightly darker border */
+.tutor-card p {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+.tutor-card a.tutor-link {
+  color: #0d47a1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tutor-card a.tutor-link:hover {
+  text-decoration: underline;
+}
+
+/* Form */
+#search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 
 #search-form label {
-  margin-right: 0.5rem;
+  font-weight: bold;
 }
 
-/* Pseudo-class: focus on search input */
-button[type="submit"] {
-  padding: 0.6rem 1.2rem;
+#search-form input[type="search"] {
+  padding: 10px;
   font-size: 1rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  min-width: 200px;
+  background-color: #fff;
+  color: #333;
+}
+
+#search-form input[type="search"]:hover {
+  background-color: #f9f9f9;
+  border-color: #999;
+}
+
+#search-form button {
+  padding: 10px 16px;
   background-color: #4caf50;
-  color: rgb(0, 0, 0);
+  color: black;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   height: 42px;
-  box-sizing: border-box;
-  vertical-align: middle;
-  display: inline-block;
 }
 
-button[type="submit"]:hover {
+#search-form button:hover {
   background-color: #388e3c;
 }
 
-/* Attribute selector: style external links */
-a[href^="http"] {
-    color: #0000ff;
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-a[href^="http"]:hover {
-    color: #0077cc;
-    text-decoration: underline;
+/* Small Screens */
+@media (max-width: 590px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #d3f0db;
+    padding: 1rem;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    text-align: left;
+    width: 100%;
+    display: block;
+    padding: 10px;
+  }
+
+  #search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search-form input,
+  #search-form button {
+    width: 100%;
+  }
 }
 
+/* Medium Screens */
+@media (min-width: 591px) and (max-width: 790px) {
+  .tutor-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #search-form {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+}

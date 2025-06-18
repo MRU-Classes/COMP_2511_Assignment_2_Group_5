@@ -1,164 +1,219 @@
-main > p {
-  margin-bottom: 0.5rem;
+
+/* Layout & Container */
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-family: sans-serif;
 }
 
-main article h1 {
-  font-size: 2rem;   
-  line-height: 1.2;     
-  margin-top: 0.5rem;
+.container {
+  width: 100%;
+  max-width: 790px;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
 
-.profile-pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
+/* Header and Navigation */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #a8d5ba;
+  padding: 10px 16px;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+#menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  display: none;
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  background-color: #d3f0db;
+  padding: 1rem;
+}
+
+.nav.open {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.nav-links li a.active {
+  background-color: #4e9a8a;
+  color: #fff;
+}
+
+/* Profile Content */
+main {
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
 }
 
 .rating {
-  font-size: 1.1rem;
-  color: #000000;
-  margin-left: 6px;
-  vertical-align: middle;
+  font-size: 1.5rem;
+  color: #ffb400;
 }
 
 .reviews {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: -8px;
-  margin-bottom: 12px;
-  padding-left: 2px;
-}
-
-.bio {
-  margin: 15px 0;
-}
-
-/* style the very first letter of the intro paragraph */
-.bio::first-letter {
-  display: inline-block;
-  font-size: 2rem;        
-  font-weight: bold;      
-  color: #4e9a8a;            
-  line-height: 1;
-  vertical-align: bottom;
-}
-
-.availability-table {
-  width: 60%;
-  max-width: 500px;
-  margin: 10px 0 20px 0;
-  border-collapse: collapse;
+  font-style: italic;
+  margin-bottom: 1rem;
   font-size: 0.95rem;
-  background-color: #f0fafa;
+}
+
+.tutor-illustration {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.tutor-illustration figcaption {
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Info Paragraphs */
+.education,
+.bio {
+  margin-bottom: 1rem;
+}
+
+/* Availability Table */
+.availability-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.availability-table th,
+.availability-table td {
   border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
 }
 
-.availability-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-/* Cleaning up the 'Contact Me' Section to look cleaner */
+/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 500px;
-  margin-top: 10px;
+  gap: 1rem;
 }
 
 .form-row {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
-.form-row.radio-group,
-.form-row.checkbox-group {
-  flex-direction: row;
-  align-items: center;
-  gap: 0.75rem;              
-}
-
-.form-row.radio-group > label:first-child,
-.form-row.checkbox-group > label:first-child {
-  font-weight: bold;
-  margin-right: 1rem;
-}
-
-.form-row label {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-form input,
-  form textarea {
-    padding: 6px;
-  font-size: 0.95rem;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
-/* Hover effect on all text inputs and textareas */
-form input:hover,
-form textarea:hover {
-  background-color: #f9f9f9;  /* light gray tint */
-  border-color:   #999;       /* slightly darker border */
-}
-
-form textarea {
-  min-height: 80px;
+textarea {
   resize: vertical;
-}
-
-.form-row.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.form-row.buttons button {
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #4c9e91;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  width: fit-content;
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.form-row.buttons button:hover {
-  background-color: #3b857a;
-}
-
-input[type="radio"],
-input[type="checkbox"],
-button[type="submit"],
-button[type="reset"] {
-  vertical-align: middle;
-  margin: 0;               
-  padding: 0;               
 }
 
 fieldset {
   border: none;
-  margin: 0;
   padding: 0;
 }
 
-input[type="date"] {
-  max-width: 200px;
-  padding: 6px;
-  font-size: 0.95rem;
+legend {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
 }
 
-a[href="#top"] {
-  display: inline-block;
-  margin-top: 1rem;   
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 10px 16px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive Navigation */
+@media (min-width: 591px) {
+  .nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 590px) {
+  #menu-toggle {
+    display: block;
+  }
 }

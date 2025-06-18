@@ -1,4 +1,3 @@
-<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,112 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Search for tutors at Tutor Doc" />
   <title>Search Tutors - Tutor Doc</title>
-  <link rel="stylesheet" href="style/general.css" />
   <link rel="stylesheet" href="style/index.css" />
 </head>
 <body>
   <div class="container">
-  
-  <a id="top"></a>
+    <header>
+      <img src="images/logo.png" alt="Tutor Doc Logo" class="logo" />
+      <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Search Tutors</a></li>
+          <li><a href="mytutors.html">My Tutors</a></li>
+          <li><a href="tutorprofile.html">Tutor Profile</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <header>
-    <img src="images/logo.png" alt="Tutor Doc Logo" class="logo">
-    <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-  </header>
+    <nav class="mobile-menu">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Search Tutors</a></li>
+        <li><a href="mytutors.html">My Tutors</a></li>
+        <li><a href="tutorprofile.html">Tutor Profile</a></li>
+      </ul>
+    </nav>
 
-  <nav class="nav" id="main-nav">
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Search Tutors</a></li>
-      <li><a href="mytutors.html">My Tutors</a></li>
-      <li><a href="tutorprofile.html">Tutor Profile</a></li>
-    </ul>
-  </nav>
+    <main>
+      <div class="hero-graphic">
+        <figure class="tutor-illustration">
+          <figcaption>Helping you find the perfect tutor</figcaption>
+          <img src="images/study.png" class="avatar" alt="Students studying" />
+        </figure>
+      </div>
 
-  <!-- Mobile navigation -->
-  <nav class="nav" id="mobile-menu">
-    <ul class="nav-links">
-     <li><a href="index.html" class="active">Search Tutors</a></li>
-      <li><a href="mytutors.html">My Tutors</a></li>
-      <li><a href="tutorprofile.html">Tutor Profile</a></li>
-    </ul>
-  </nav>
+      <h1>Search Tutors</h1>
+      <p>Use the form below to find tutors matching your needs:</p>
 
-  <main>
-    <div class="hero-graphic">
-      <figure class="tutor-illustration">
-        <figcaption>Helping you find the perfect tutor</figcaption>
-        <img src="images/study.png" class="avatar" alt="Students studying">
-      </figure>
-    </div>
+      <form id="search-form">
+        <label for="search-query">Search:</label>
+        <input type="search" id="search-query" name="search-query" placeholder="Search tutors..." />
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject">
+          <option value="math">Math</option>
+          <option value="science">Science</option>
+          <option value="english">English</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
 
-    <h1>Search Tutors</h1>
-    <p>Use the form below to find tutors matching your needs:</p>
+      <ul class="tutor-list">
+        <li class="tutor-card">
+          <img src="images/smiling-girl.png" alt="Michelle Hendley" />
+          <h2>Michelle Hendley</h2>
+          <p>Calgary, AB</p>
+          <p>★★★★★</p>
+        </li>
+        <li class="tutor-card">
+          <img src="images/smiling-girl.png" alt="Kimberly White" />
+          <h2>Kimberly White</h2>
+          <p>Edmonton, AB</p>
+          <p>★★★★☆</p>
+        </li>
+        <li class="tutor-card">
+          <img src="images/smiling-boy.png" alt="Steve Rogers" />
+          <h2><a href="tutorprofile.html" class="tutor-link">Steve Rogers</a></h2>
+          <p>Edmonton, AB</p>
+          <p>★★★★☆</p>
+        </li>
+      </ul>
+    </main>
 
-    <form id="search-form">
-      <label for="search-query">Search:</label>
-      <input type="search" id="search-query" name="search-query" placeholder="Search tutors..." />
-
-      <label for="subject">Subject:</label>
-      <select id="subject" name="subject">
-        <option value="math">Math</option>
-        <option value="science">Science</option>
-        <option value="english">English</option>
-      </select>
-
-      <button type="submit">Search</button>
-    </form>
-
-    <ul class="tutor-list">
-      <li class="tutor-card">
-        <img src="images/smiling-girl.png" alt="Portrait of Michelle Hendley" />
-        <h2>Michelle Hendley</h2>
-        <p>Calgary, AB</p>
-        <p>★★★★★</p>
-      </li>
-      <li class="tutor-card">
-        <img src="images/smiling-girl.png" alt="Portrait of Kimberly White" />
-        <h2>Kimberly White</h2>
-        <p>Edmonton, AB</p>
-        <p>★★★★☆</p>
-      </li>
-      <li class="tutor-card">
-        <img src="images/smiling-boy.png" alt="Portrait of Steve Rogers" class="tutor-avatar" />
-        <h2 class="tutor-name"><a href="tutorprofile.html" class="tutor-link">Steve Rogers</a></h2>
-        <p>Edmonton, AB</p>
-        <p>★★★★☆</p>
-      </li>
-    </ul>
-
-    <table class="striped subject-table">
-      <thead>
-        <tr><th colspan="2">Tutors by Subject</th></tr>
-        <tr><th>Class</th><th># of Tutors Available</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Linear Algebra</td><td>10</td></tr>
-        <tr><td>Web I</td><td>8</td></tr>
-        <tr><td>Thermodynamics</td><td>12</td></tr>
-      </tbody>
-    </table>
-
-    <a href="#top">Back to top</a>
-  </main>
-
-  <footer>
-    &copy; 2025 Tutor Doc
-  </footer>
+    <footer>&copy; 2025 Tutor Doc</footer>
+  </div>
 
   <script>
     const toggleBtn = document.getElementById("menu-toggle");
-    const nav = document.getElementById("mobile-menu");
+    const mobileMenu = document.querySelector(".mobile-menu");
 
     toggleBtn.addEventListener("click", () => {
-      nav.classList.toggle("open");
-  });
+      mobileMenu.classList.toggle("open");
+    });
   </script>
-
-  </div>
-
 </body>
-
 </html>
