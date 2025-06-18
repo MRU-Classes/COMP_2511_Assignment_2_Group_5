@@ -2,135 +2,33 @@ main > p {
   margin-bottom: 0.5rem;
 }
 
-.hero-graphic {
-  float: right;       
-  width: 100px;      
-  margin: 1.5rem 0 0.5rem; 
-  text-align: center; 
-}
-
-.hero-graphic .avatar {
-  width: 100%;
-  height: auto;
-  display: block;    
-}
-
-.hero-graphic figcaption {
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-  /* Grid layout for tutor list */
-.tutor-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 24px;
-  padding: 0;
-  list-style: none;
-  margin: 20px 0;
-}
-
-.tutor-card img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 10px;  /* center + small bottom gap */
-}
-
-  /* Striped table rows */
-  table.striped tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-/* Fix search form layout */
-#search-form {
-  align-items: left;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-#search-form label {
-  margin-right: 0.5rem;
-}
-
-#search-form input[type="search"],
-#search-form select {
-
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-
-  height: 42px;
-  box-sizing: border-box;
-
-  border: 1px solid #ccc;
-  border-radius: 4px;
-
-  background-color: #fff;
-  color: #333;
-
-  vertical-align: middle;
-
-}
-
-#search-form input[type="search"]:hover {
-  background-color: #f9f9f9;   /* light gray tint */
-  border-color:   #999;        /* slightly darker border */
-}
-
-#search-form select:hover {
-  background-color: #f9f9f9;  /* light gray tint on hover */
-  border-color:   #999;       /* slightly darker border */
-}
-
-/* Pseudo-class: focus on search input */
-button[type="submit"] {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  background-color: #4caf50;
-  color: rgb(0, 0, 0);
-  border: none;
-  cursor: pointer;
-  height: 42px;
-  box-sizing: border-box;
-  vertical-align: middle;
-  display: inline-block;
-}
-
-#search-form button[type="submit"]:hover {
-  background-color: #388e3c;
-}
-
-/* === Default Layout === */
+/* Header and Logo */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #a8d5ba;
   padding: 10px 16px;
-  position: relative;
 }
 
 .logo {
   max-height: 50px;
 }
 
+/* Hamburger toggle */
 #menu-toggle {
   background: none;
   border: none;
   font-size: 2rem;
   cursor: pointer;
   color: #333;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* Navigation styles */
+/* Navigation */
 .nav {
   display: flex;
+  justify-content: flex-end;
 }
 
 .nav-links {
@@ -146,20 +44,19 @@ header {
   color: #222;
   font-weight: bold;
   padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .nav-links li a.active {
   background-color: #4e9a8a;
   color: #fff;
-  border-radius: 5px;
 }
 
 /* Hero Graphic */
 .hero-graphic {
-  float: right;
-  margin: 1rem 0 0.5rem;
+  margin: 1rem auto;
   text-align: center;
-  max-width: 120px;
+  max-width: 200px;
 }
 
 .hero-graphic .avatar {
@@ -169,8 +66,8 @@ header {
 
 .hero-graphic figcaption {
   font-style: italic;
-  font-size: 0.8rem;
-  margin-top: 0.3rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Search Form */
@@ -194,6 +91,14 @@ header {
   border-radius: 4px;
   flex: 1;
   min-width: 200px;
+  background-color: #fff;
+  color: #333;
+}
+
+#search-form input[type="search"]:hover,
+#search-form select:hover {
+  background-color: #f9f9f9;
+  border-color: #999;
 }
 
 #search-form button[type="submit"] {
@@ -203,36 +108,51 @@ header {
   color: black;
   border-radius: 4px;
   cursor: pointer;
+  height: 42px;
 }
 
 #search-form button[type="submit"]:hover {
   background-color: #388e3c;
 }
 
-/* desktop navigation */
-.nav {
-  display: flex;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
+/* Tutor Cards */
+.tutor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
   padding: 0;
+  list-style: none;
+  margin: 20px 0;
 }
 
-/* Mobile styles */
+.tutor-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+}
+
+/* Striped Table */
+table.striped tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Small Devices */
 @media (max-width: 590px) {
+  #menu-toggle {
+    display: block;
+  }
+
   .nav {
-    display: none; /* Hide by default on mobile */
+    display: none;
     flex-direction: column;
     background-color: #d3f0db;
     padding: 1rem;
   }
 
   .nav.open {
-    display: flex; /* Show nav when toggled */
+    display: flex;
   }
 
   .nav-links {
@@ -247,33 +167,18 @@ header {
 
   .nav-links li a {
     display: block;
-    width: 100%;
     padding: 12px;
     font-size: 1.1rem;
-    text-align: left;
-    border-radius: 6px;
-    font-weight: bold;
-    color: #333;
+    width: 100%;
   }
-
-  .nav-links li a:hover {
-    background-color: #4e9a8a;
-    color: white;
-  }
-
-  #menu-toggle {
-    display: block;
-  }
-}
 
   .hero-graphic {
-    float: none;
     margin: 1rem auto;
-    text-align: center;
+    max-width: 150px;
   }
 
   .hero-graphic figcaption {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
   }
 
   #search-form {
@@ -281,73 +186,46 @@ header {
     align-items: stretch;
   }
 
-  #search-form input[type="search"],
+  #search-form input,
   #search-form select,
   #search-form button {
     width: 100%;
   }
+}
 
-  /* Hides the hamburger by default on large screen*/
-  @media (min-width: 591px) {
-    #menu-toggle {
-      display: none;
-    }
-  
-    .nav {
-      display: flex !important;
-    }
-  
-    .nav-links {
-      flex-direction: row;
-    }
+/* Medium Devices */
+@media (min-width: 591px) and (max-width: 790px) {
+  .hero-graphic {
+    margin: 2rem auto;
+    max-width: 180px;
   }
 
-/* Mobile-first hidden nav by default */
-#menu-toggle {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
+  .hero-graphic figcaption {
+    font-size: 1.4rem;
+  }
+
+  .tutor-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .tutor-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  #search-form {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
-/* Hide nav until toggled */
-.nav {
-  display: none;
-  flex-direction: column;
-  background-color: #d3f0db;
-  padding: 1rem;
-}
-
-.nav.open {
-  display: flex;
-}
-
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li {
-  margin: 0.5rem 0;
-}
-
-.nav-links a {
-  display: block;
-  padding: 10px;
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-.nav-links a:hover {
-  background-color: #4e9a8a;
-  color: white;
-}
-
-/* Large screen behavior */
-@media (min-width: 591px) {
+/* Large Devices */
+@media (min-width: 791px) {
   #menu-toggle {
     display: none;
   }
@@ -372,81 +250,9 @@ header {
   .nav-links a {
     padding: 8px 12px;
   }
-}
 
-/* Medium screens */
-@media (min-width: 591px) and (max-width: 790px) {
-
-  /* Header: show horizontal nav menu */
-  #menu-toggle {
-    display: none;
-  }
-
-  .nav {
-    display: flex !important;
-    justify-content: flex-end;
-    background-color: transparent;
-    padding: 0;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .nav-links li a {
-    padding: 8px 12px;
-    font-size: 1rem;
-    background-color: transparent;
-    color: #333;
-  }
-
-  /* Hero section: center image and caption */
-  .hero-graphic {
-    float: none;
-    text-align: center;
-    margin: 1rem auto;
-  }
-
-  .tutor-illustration {
-    max-width: 150px;
-    margin: 0 auto;
-  }
-
-  .tutor-illustration figcaption {
-    font-size: 0.85rem;
-    text-align: center;
-  }
-
-  /* Tutor cards in 2x2 grid */
-  .tutor-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 0;
-    margin-top: 2rem;
-  }
-
-  .tutor-card {
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 6px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.1);
-  }
-
-  /* Form stays centered */
-  #search-form {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #search-form input[type="search"],
-  #search-form select,
-  #search-form button[type="submit"] {
-    width: 100%;
+  .nav-links a.active {
+    background-color: #4e9a8a;
+    color: #fff;
   }
 }
