@@ -256,3 +256,54 @@ table.striped tbody tr:nth-child(even) {
     color: #fff;
   }
 }
+
+/* Large Devices */
+@media (min-width: 790px) {
+  body {
+    background-color: #f5f5f5; /* your plain color of choice */
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    width: 790px;
+    background-color: #ffffff; /* main page background */
+    padding: 2rem;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  }
+
+  header,
+  main,
+  footer {
+    width: 100%;
+  }
+
+  .tutor-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Centre the slogan and photo underneath it */
+  .hero-graphic {
+    max-width: 250px;
+  }
+
+  .tutor-illustration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tutor-illustration figcaption {
+    font-size: 1.0rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tutor-illustration .avatar {
+    width: 100px;
+    height: auto;
+  }
+
+}
